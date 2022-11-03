@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>退出</title>
+</head>
+<body>
+<!--注意这里的退出登陆请求也必须是POST请求方式（因为开启了CSFR防护，需要添加Token），否则无法访问，这里主页面就这样写-->
+<form action="logout" method="post">
+    <input type="text" th:name="${_csrf.getParameterName()}" th:value="${_csrf.token}" hidden>
+    <button>退出登陆</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<aside class="sidebar-wrapper">
+    <div class="side-menu-wrap">
+        <ul class="main-menu">
+            <!--Dashboard [首页]-->
+            <li>
+                <a href="index" class="active">
+                    <span class="icon-menu feather-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                    </span>
+                    <span class="menu-text">
+                        Dashboard [首页]
+                    </span>
+                </a>
+            </li>
+            <!--用户管理-->
+            <li>
+                <a th:href="@{/page-user}">
+                <span class="icon-menu feather-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    </span>
+                    <span class="menu-text">
+                        User management 用户管理
+                    </span>
+                </a>
+            </li>
+            <!--银行卡管理-->
+            <li>
+                <a th:href="@{showCard}">
+                    <span class="icon-menu feather-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-truck"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                    </span>
+                    <span class="menu-text">
+                                Bank card management &nbsp 银行卡管理
+                    </span>
+                </a>
+            </li>
+            <!--常规业务办理-->
+            <li>
+                <a th:href="@{common}">
+                            <span class="icon-menu feather-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-package"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                            </span>
+                    <span class="menu-text">
+                                Routine to handle
+                                <br/>常规业务办理
+                            </span>
+                </a>
+                <!--详细功能-->
+                <ul class="sub-menu">
+                    <li>
+                        <a th:href="@{query}">
+                                    <span class="icon-dash">
+                                    </span>
+                            <span class="menu-text">
+                                        query 查询
+                                    </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a th:href="@{deposit}">
+                                    <span class="icon-dash">
+                                    </span>
+                            <span class="menu-text">
+                                        deposit 存款
+                                    </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a th:href="@{showWithdrawals}">
+                                    <span class="icon-dash">
+                                    </span>
+                            <span class="menu-text">
+                                        withdrawals 取款
+                                    </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a th:href="@{showTransfer}">
+                                    <span class="icon-dash">
+                                    </span>
+                            <span class="menu-text">
+                                        transfer 转账
+                                    </span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <!--待定-->
+            <li>
+                <a th:href="@{showLogSystem}">
+
+                            <span class="icon-menu feather-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                            </span>
+                    <span class="menu-text">
+                                Log Table [日志系统]
+                            </span>
+                </a>
+            </li>
+            <!--退出系统
+            <li>
+                <a th:action="logout" >&lt;!&ndash;th:href="@{LogOut}"&ndash;&gt;
+
+                    &lt;!&ndash;<span class="icon-menu feather-icon">
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <i class="fas fa-yin-yang" style="display: block" ></i>
+                        </div>
+                    </span>&ndash;&gt;
+
+                    <span class="icon-menu feather-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-wind"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"></path></svg>
+                        </span>
+                    <input type="text" th:name="${_csrf.getParameterName()}" th:value="${_csrf.token}" hidden>
+
+                        <span class="menu-text">
+                                Log out 退出系统
+                        </span>
+                </a>
+            </li>-->
+        </ul>
+    </div>
+</aside>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--<![endif]-->
+<!-- Begin Head -->
+
+<head>
+    <title>Query the business</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="MobileOptimized" content="320">
+    <!--Start Style -->
+    <link rel="stylesheet" type="text/css" href="static/css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/icofont.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    <link rel="stylesheet" id="theme-change" type="text/css" href="">
+</head>
+
+
+<body>
+<div class="loader">
+    <div class="spinner">
+        <img src="static/picture/loader.gif" alt="">
+    </div>
+</div>
+<!-- Main Body -->
+<div class="page-wrapper">
+    <!-- Header Start -->
+    <div th:include="dynamic/header"></div>
+    <!-- Sidebar Start -->
+    <div th:include="dynamic/menu"></div>
+    <!-- Container Start -->
+    <div class="panel-body" >
+        <!-- 原form表单删除 -->
+        <div class="panel-body" style="margin: auto;position: absolute; top: 10em; bottom: 0; left: 50em; right: 5em;">
+            <div class="page-title-box ad-title-box-use">
+                <h2 class="page-title">Query</h2>
+            </div>
+        </div>
+
+        <div class="row" style="margin: auto;position: absolute; top: 20em; bottom: 0; left: 50em; right: 5em;">
+            <div class="col-md-6 col-md-offset-3" style="margin-top: 30px;">
+                <div class="input-group">
+                    <input id="cid" placeholder="请输入卡号" type="text" class="form-control">
+                    <span id="queryBtn" class="input-group-addon btn">查询</span>
+                </div>
+                <div id="msg" style="margin: 100px auto;text-align: center;left: 45em;font-size: 24px; width:600px">
+                    <!-- 查询结果显示 -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- Color Setting -->
+<!-- Script Start -->
+<script src="static/js/jquery.min.js"></script>
+<script src="static/js/popper.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+<script src="static/js/custom.js"></script>
+<script>
+    $("#queryBtn").click(function () {
+        var cid = $("#cid").val();
+        $.get("/api/common/queryData?cid="+cid, function (result) {
+            $("#msg").html(result);
+        });
+    });
+</script>
+
+</body>
+
+</html>

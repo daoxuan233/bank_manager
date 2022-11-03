@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--<![endif]-->
+<!-- Begin Head -->
+
+<head>
+    <title>withdrawals</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="MobileOptimized" content="320">
+    <!--Start Style -->
+    <link rel="stylesheet" type="text/css" th:href="@{static/css/fonts.css}">
+    <link rel="stylesheet" type="text/css" href="static/css/range.css">
+    <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/icofont.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    <link rel="stylesheet" id="theme-change" type="text/css" href="">
+</head>
+<body>
+<div class="page-wrapper">
+<!-- Header Start -->
+<div th:include="dynamic/header"></div>
+<!-- Sidebar Start -->
+<div th:include="dynamic/menu"></div>
+<!-- Container Start -->
+<div class="panel-body" style="margin: auto;position: absolute; top: 10em; bottom: 0; left: 50em; right: 5em;">
+    <div class="page-title-box ad-title-box-use">
+        <h2 class="page-title">withdrawals</h2>
+    </div>
+</div>
+
+<div style="margin: auto;position: absolute; top: 20em; bottom: 0; left: 50em; right: 5em;"><!--name = "myform" -->
+    <form class="form-horizontal" role="form"  th:action="@{/api/common/withdrawalsMoney}" method="post"> <!--th:onsubmit="myformTest()"-->
+        <div class="form-group">
+            <label for="cid" class="col-sm-2 control-label">卡号</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" id="cid" name="cid"
+                       placeholder="请输入取款卡号">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="money" class="col-sm-2 control-label">取款金额</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" id="money" name="money"
+                       placeholder="请输入取款金额">
+            </div>
+        </div>
+        <div class="form-group" style="text-align: center ;  display: block;">
+            <!--/*@thymesVar id="hello" type="book.manager.controller.api.CommonApiController"*/-->
+            <input type="submit" class="btn btn-success"  value="提交"/> <!--th:href="'javascript:a(\''+${hello}+'\');'"-->  <!--th:onclick="btnText(${hello})"-->
+            <button class="btn btn-warning" type="reset">重置</button>
+        </div>
+    </form>
+</div>
+</div>
+<script src="static/js/jquery.min.js"></script>
+<script src="static/js/range.js"></script>
+<script src="static/js/popper.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+<script src="static/js/custom.js"></script>
+<script>
+
+    /*var message = "${message}";*/
+
+    /*function btnText(hello){
+        /!* let myform = document.getElementsByName(myform);*!/
+        document.myform.action = "/api/common/withdrawalsMoney";
+        document.myform.submit();
+    }*/
+    /*th:href="'javascript:a(\''+${hello}+'\');'"*/
+    /*function a(hello) {
+        window.alert(hello);
+    }*/
+
+    /*function myformTest(){
+        alert("${hello}");
+        document.myform.action="/api/common/withdrawalsMoney"
+    }*/
+</script>
+</body>
+
+</html>
